@@ -1,0 +1,32 @@
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.dish-img {
+  // height:300px;
+  // width: 300px;
+}
+.menu-card{
+  max-width: 300px;
+}
+
+.menu-wrap{
+  flex-wrap: wrap;
+}
+
+.card-title{
+  font-size: 20px;
+}
+
+.left{
+  position: absolute;
+  left: 10px;
+  margin-bottom: 100px;
+}
+
+.price-right{
+  position: absolute;
+  right: 10px;
+  color: red;
+}

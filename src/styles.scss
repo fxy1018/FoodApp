@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './scss/myTheme.scss';
+@import "~@progress/kendo-theme-bootstrap/scss/all";
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+
+}
+
+
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+
+
+.flex-spacer {
+  flex: 1 1 auto;
+}
