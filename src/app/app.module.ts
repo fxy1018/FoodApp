@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { OrderpageComponent } from './orderpage/orderpage.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import { DishService } from './services/dish.service';
@@ -34,6 +35,7 @@ import 'hammerjs';
     MatGridListModule,
     MatListModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
 
   ],
   providers: [DishService,],

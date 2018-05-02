@@ -17,11 +17,12 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.dishes = this.dishService.getDishes();
-    this.selectedDishes = this.dishes
+    this.selectedDishes=[];
   }
 
-  addDish() {
-
+  addDish(dish: Dish) {
+    console.log("add dish" +  dish);
+    this.selectedDishes.push(dish)
   }
 
 

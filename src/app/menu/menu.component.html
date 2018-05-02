@@ -18,34 +18,25 @@
     </li>
   </ul>
 </div>
+<div *ngIf="dishes">
+  <div class="container menu-wrap" fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="20px">
+    <div fxFlex="30" *ngFor="let dish of dishes" fxLayoutGap="10px">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body row card-header-height">
+          <div>
+            <div class="card-title left" >{{dish.name}}</div>
+          </div>
+          <div>
+            <div class="card-title price-right">${{dish.price}}</div>
+          </div>
 
-<div class="container menu-wrap" fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="20px">
-  <div fxFlex="30" *ngFor="let dish of dishes" fxLayoutGap="10px">
-    <div class="card" style="width: 20rem;">
-      <div class="card-body row card-header-height">
-        <div>
-          <div class="card-title left" >{{dish.name}}</div>
         </div>
-        <div>
-          <div class="card-title price-right">${{dish.price}}</div>
-        </div>
-
+        <img class="card-img-top" src={{dish.image}} alt="Card image cap">
+        <a class="btn btn-primary" (click)="addDish(dish)">Order</a>
       </div>
-      <img class="card-img-top" src={{dish.image}} alt="Card image cap">
-      <a href="#" class="btn btn-primary">Order</a>
     </div>
-    <!-- <mat-card class="menu-card">
-      <mat-card-header>
-        <mat-card-title class="card-title">{{dish.name}}</mat-card-title>
-        <mat-card-subtitle>${{dish.price}}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image class="dish-img" src={{dish.image}} alt="Photo of a Shiba Inu">
-      <mat-card-content>
-
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color='primary'>Add</button>
-      </mat-card-actions>
-    </mat-card> -->
   </div>
+</div>
+<div [hidden]="dishes">
+  <mat-spinner></mat-spinner> <h4>Loading... Please Wait</h4>
 </div>

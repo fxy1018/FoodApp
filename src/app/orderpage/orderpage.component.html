@@ -1,3 +1,18 @@
-<p *ngFor='let d of selectedDishes'>
-  {{d.name}}
-</p>
+
+<div fxFlex *ngIf="selectedDishes">
+    <h4>Order Preview</h4>
+    <mat-list>
+      <mat-list-item *ngFor="let d of selectedDishes">
+        <img matListAvatar src={{d.image}} alt={{d.name}}/>
+        <p matLine>{{d.name}}</p>
+      </mat-list-item>
+    </mat-list>
+    <hr>
+    <h5>Count: {{totalDish}}</h5>
+    <h5>Total: <span style="color:red">${{totalPrice}}</span></h5>
+
+    <a class="btn primary">Place Order</a>
+</div>
+<div [hidden]="selectedDishes">
+ <mat-spinner></mat-spinner> <h4>Loading... Please Wait</h4>
+</div>

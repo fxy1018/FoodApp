@@ -9,11 +9,21 @@ import { Dish } from '../../shared/dish';
 })
 export class OrderpageComponent implements OnInit {
 
+  totalPrice: number;
+  totalDish: number;
+
   constructor(public dialogRef: MatDialogRef<OrderpageComponent>,
     @Inject(MAT_DIALOG_DATA) public selectedDishes: any) {
     this.selectedDishes = this.selectedDishes.dishes}
 
   ngOnInit() {
+    this.totalPrice = 0
+    for (let i = 0, len = this.selectedDishes.length; i < len; i++) {
+      this.totalPrice += this.selectedDishes[i].price;
+    }
+    this.totalDish = this.selectedDishes.length;
+
+
   }
 
 }
