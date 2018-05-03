@@ -11,7 +11,7 @@
     <h5>Count: {{totalDish}}</h5>
     <h5>Total: <span style="color:red">${{totalPrice}}</span></h5>
 
-    <a class="btn primary">Place Order</a>
+    <a class="btn btn-primary" (click)="placeOrder(slectedDishes)">Place Order</a>
 </div>
 <div [hidden]="selectedDishes">
  <mat-spinner></mat-spinner> <h4>Loading... Please Wait</h4>

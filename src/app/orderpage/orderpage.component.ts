@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Dish } from '../../shared/dish';
-
+import { DishService } from '../services/dish.service';
 @Component({
   selector: 'app-orderpage',
   templateUrl: './orderpage.component.html',
@@ -13,7 +13,8 @@ export class OrderpageComponent implements OnInit {
   totalDish: number;
 
   constructor(public dialogRef: MatDialogRef<OrderpageComponent>,
-    @Inject(MAT_DIALOG_DATA) public selectedDishes: any) {
+    @Inject(MAT_DIALOG_DATA) public selectedDishes: any,
+    private dishService: DishService) {
     this.selectedDishes = this.selectedDishes.dishes}
 
   ngOnInit() {
@@ -22,8 +23,13 @@ export class OrderpageComponent implements OnInit {
       this.totalPrice += this.selectedDishes[i].price;
     }
     this.totalDish = this.selectedDishes.length;
-
-
   }
+
+  placeOrder(dishes: Dish[]) {
+    this.dishService.order(dishes)
+  }
+
+
+
 
 }

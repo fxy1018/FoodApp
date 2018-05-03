@@ -6,8 +6,14 @@ import { DISHES } from '../../shared/dishes';
 export class DishService {
 
   constructor() { }
+
   getDishes(): Dish[] {
     return DISHES;
-  }  
+  }
+
+  order(dish: Dish[]) {
+    console.log("order Dish")
+    
+  }
 
 }
